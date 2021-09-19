@@ -10,56 +10,57 @@ public class HashTableImp {
 
 		
 		//declare and instantiate a HashTable,
-		//synced, thread safe , no null keys/value
-		Hashtable<Integer, String> lhs = new Hashtable<Integer,String>();
+		//synced, thread safe , no null keys/value at all 
+		Hashtable<Integer, String> ht = new Hashtable<Integer,String>();
 		
 		
 		//add an entry(a.k.a. a kev, value pair) to map
-		lhs.put(1,"Kevin");
-		lhs.put(4,"Dojo");
-		lhs.put(2,"Charlie");
-		lhs.put(3,"Tim");
+		ht.put(1,"Kevin");
+		ht.put(4,"Dojo");
+		ht.put(2,"Charlie");
+		ht.put(3,"Tim");
 		
 		
 		//can't add null to hashtables
-//		lhs.put(null,null);
+//		ht.put(null,null); // no null keys
+		//ht.put(5,null); // no null values
 		
-		System.out.println("The map is currently: " + lhs);
+		System.out.println("The map is currently: " + ht);
 		
 		
 		// trying to use a duplicate key will overwrite that entry's value
-		lhs.put(3,"Tod");
+		ht.put(3,"Tod");
 				
-		System.out.println("The map after adding tod to 3 : " + lhs);
+		System.out.println("The map after adding tod to 3 : " + ht);
 		
 		// accessing an item
-		System.out.println("The value at key 3 is : " + lhs.get(3));
+		System.out.println("The value at key 3 is : " + ht.get(3));
 		
 		
 		//removing item
-		System.out.println("Removing item at 2: " + lhs.remove(2));
+		System.out.println("Removing item at 2: " + ht.remove(2));
 		
-		System.out.println("The map after removing item 2: " + lhs);
+		System.out.println("The map after removing item 2: " + ht);
 		
 		//size of hs
 		
-		System.out.println("The size of the map is: "+  lhs.size());
+		System.out.println("The size of the map is: "+  ht.size());
 		
 		
 		//print keys
-		for(int i: lhs.keySet()) {
+		for(int i: ht.keySet()) {
 			System.out.println(i);
 		}
 		
 		
-		//print keys
-		for(String s: lhs.values()) {
+		//print values
+		for(String s: ht.values()) {
 			System.out.println(s);
 		}
 		
 		
 		//printing both with entrySet()
-		for(Map.Entry<Integer,String> entry : lhs.entrySet() ) {
+		for(Map.Entry<Integer,String> entry : ht.entrySet() ) {
 			
 			System.out.println("The key: " + entry.getKey() + " , value: " + entry.getValue());
 		
@@ -67,25 +68,25 @@ public class HashTableImp {
 		
 		
 		//search for value
-		System.out.println("Does map contain value: " + lhs.containsValue("Kevin"));
+		System.out.println("Does map contain value: " + ht.containsValue("Kevin"));
 		
 		
 		//search for key
-		System.out.println("Does map contain key: " + lhs.containsKey(2));
+		System.out.println("Does map contain key: " + ht.containsKey(2));
 				
 		//replace vlaue for key
 		
-		System.out.println("Replacing value for key at 1: " + lhs.replace(1,"Kim"));
+		System.out.println("Replacing value for key at 1: " + ht.replace(1,"Kim"));
 		
-		System.out.println("Map after replacing key 1: " + lhs );
+		System.out.println("Map after replacing key 1: " + ht );
 		
 		
 		//clear out map
-		lhs.clear();
+		ht.clear();
 		
-		System.out.println("The map after clearing it out: " + lhs);
+		System.out.println("The map after clearing it out: " + ht);
 		
-		System.out.println("is map empty: " + lhs.isEmpty());
+		System.out.println("is map empty: " + ht.isEmpty());
 		
 		
 		

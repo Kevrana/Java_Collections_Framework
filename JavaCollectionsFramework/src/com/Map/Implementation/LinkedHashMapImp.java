@@ -9,53 +9,59 @@ public class LinkedHashMapImp {
 		// TODO Auto-generated method stub
 
 		//declare and instantiate a LinkedHashMap, this one maintains insertion order
+		// allows one null key, many null values
 		// not synced, not thread safe
-		LinkedHashMap<Integer, String> lhs = new LinkedHashMap<Integer,String>();
+		LinkedHashMap<Integer, String> lhm = new LinkedHashMap<Integer,String>();
 		
 		
 		//add an entry(a.k.a. a kev, value pair) to map
-		lhs.put(1,"Kevin");
-		lhs.put(4,"Dojo");
-		lhs.put(2,"Charlie");
-		lhs.put(3,"Tim");
+		lhm.put(1,"Kevin");
+		lhm.put(4,"Dojo");
+		lhm.put(2,"Charlie");
+		lhm.put(3,"Tim");
 		
 		
-		System.out.println("The map is currently: " + lhs);
+		// allows one null key, many null values
+		//lhs.put(null,null);
+		lhm.put(5,null);
+		lhm.put(6,null);
+		
+		System.out.println("The map is currently: " + lhm);
 		
 		
 		// trying to use a duplicate key will overwrite that entry's value
-		lhs.put(3,"Tod");
+		lhm.put(3,"Tod");
 				
-		System.out.println("The map after adding tod to 3 : " + lhs);
+		System.out.println("The map after adding tod to 3 : " + lhm);
 		
 		// accessing an item
-		System.out.println("The value at key 3 is : " + lhs.get(3));
+		System.out.println("The value at key 3 is : " + lhm.get(3));
 		
 		
 		//removing item
-		System.out.println("Removing item at 2: " + lhs.remove(2));
+		System.out.println("Removing item at 2: " + lhm.remove(2));
 		
-		System.out.println("The map after removing item 2: " + lhs);
+		System.out.println("The map after removing item 2: " + lhm);
 		
 		//size of hs
 		
-		System.out.println("The size of the map is: "+  lhs.size());
+		System.out.println("The size of the map is: "+  lhm.size());
 		
 		
 		//print keys
-		for(int i: lhs.keySet()) {
+		for(int i: lhm.keySet()) {
 			System.out.println(i);
 		}
 		
 		
 		//print keys
-		for(String s: lhs.values()) {
+		for(String s: lhm.values()) {
 			System.out.println(s);
 		}
 		
 		
 		//printing both with entrySet()
-		for(Map.Entry<Integer,String> entry : lhs.entrySet() ) {
+		for(Map.Entry<Integer,String> entry : lhm.entrySet() ) {
 			
 			System.out.println("The key: " + entry.getKey() + " , value: " + entry.getValue());
 		
@@ -63,25 +69,25 @@ public class LinkedHashMapImp {
 		
 		
 		//search for value
-		System.out.println("Does map contain value: " + lhs.containsValue("Kevin"));
+		System.out.println("Does map contain value: " + lhm.containsValue("Kevin"));
 		
 		
 		//search for key
-		System.out.println("Does map contain key: " + lhs.containsKey(2));
+		System.out.println("Does map contain key: " + lhm.containsKey(2));
 				
 		//replace vlaue for key
 		
-		System.out.println("Replacing value for key at 1: " + lhs.replace(1,"Kim"));
+		System.out.println("Replacing value for key at 1: " + lhm.replace(1,"Kim"));
 		
-		System.out.println("Map after replacing key 1: " + lhs );
+		System.out.println("Map after replacing key 1: " + lhm );
 		
 		
 		//clear out map
-		lhs.clear();
+		lhm.clear();
 		
-		System.out.println("The map after clearing it out: " + lhs);
+		System.out.println("The map after clearing it out: " + lhm);
 		
-		System.out.println("is map empty: " + lhs.isEmpty());
+		System.out.println("is map empty: " + lhm.isEmpty());
 		
 	}
 

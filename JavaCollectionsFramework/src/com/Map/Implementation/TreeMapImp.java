@@ -20,8 +20,8 @@ public class TreeMapImp {
 		
 		//treemaps don't allow null keys, but many null values
 		tm.put(5, null);
-//		
-
+//		tm.put(null,null);
+		tm.put(6, null);
 
 		System.out.println("The map is currently: " + tm);
 		

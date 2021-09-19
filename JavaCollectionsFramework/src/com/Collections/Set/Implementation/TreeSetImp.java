@@ -33,7 +33,7 @@ public class TreeSetImp {
 		
 		
 		//size of set
-		System.out.println("The set is currently: " + ts.size());
+		System.out.println("The set's size is currently: " + ts.size());
 		
 		// adding a duplicate value
 		System.out.println("Can I add another '45' to the set? " + ts.add(45));
